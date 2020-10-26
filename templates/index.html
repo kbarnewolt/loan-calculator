@@ -11,13 +11,13 @@
 <form method="POST" action="/mnthlyPmt" id="calculateLoan">
 
     <label for="loanAmt">Loan Amount:</label><br>
-    <input type="text" id="loanAmt" name="loanAmt"><br>
+    <input type="text" id="loanAmt" name="loanAmt" placeholder="in $USD" required autofocus><br>
 <br>
     <label for="lengthOfLoan">Length of Loan:</label><br>
-    <input type="text" id="lengthOfLoan" name="lengthOfLoan"><br>
+    <input type="text" id="lengthOfLoan" name="lengthOfLoan" placeholder="in years" required><br>
 <br>
     <label for="intRate">Interest Rate:</label><br>
-    <input type="text" id="intRate" name="intRate"> <br> 
+    <input type="text" id="intRate" name="intRate" placeholder=".05" > <br> 
 <br>
 
 <input type="submit" value="Submit">
@@ -25,8 +25,12 @@
 
 </form>
 
+<br><br>
 
+{% if mnthlyPmt %}
 
+    <p>Your monthly payment is:  {{ mnthlyPmt }}</p>
 
+{% endif %}
 
 {% endblock %}
