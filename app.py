@@ -44,8 +44,7 @@ def mnthlyPmt():
         loan.calculateLoanPmt()
 
         mnthlyLoanPmt = loan.getLoanPmt()
-
-        print(mnthlyLoanPmt)
+        mnthlyLoanPmt = ("The monthly payment for this loan is ${0:,.2f}".format(mnthlyLoanPmt))
 
         return render_template('index.html', mnthlyPmt = mnthlyLoanPmt)
         
